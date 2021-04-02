@@ -1,21 +1,34 @@
-public class Local {
+package com.company;
+import java.util.ArrayList;
+import java.util.UUID;
+import java.util.Scanner;
 
+public class Local implements Comparable<Local>{
+    private String LocalId = UUID.randomUUID().toString();
     private String nume;
     private String adresa;
-    private String tipLocal; //daca tipul maxim e gold,atunci la sala aia poti sa ai abonament silver platinum sau gold..
+    private String tipLocal;
+    private ArrayList<Mancare> meniu;
+    private int maxComenzi;
 
     public Local() {
 
         nume=null;
         adresa=null;
         tipLocal =null;
+        meniu = null;
+        maxComenzi = 20;
     }
 
-    public Local(String nume, String adresa, String tipLocal) {
+    public Local(String nume, String adresa, String tipLocal, ArrayList<Mancare> meniu) {
         this.nume = nume;
         this.adresa = adresa;
         this.tipLocal = tipLocal;
+        this.meniu = meniu;
+        this.maxComenzi = 20;
     }
+
+    public String getId() { return LocalId; }
 
     public String getNume() {
         return nume;
@@ -27,6 +40,18 @@ public class Local {
 
     public String getTipLocal() {
         return tipLocal;
+    }
+
+    public ArrayList<Mancare> getMeniu() {
+        return meniu;
+    }
+
+    public int getMaxComenzi() {
+        return maxComenzi;
+    }
+
+    public void setMeniu(ArrayList<Mancare> meniu) {
+        this.meniu = meniu;
     }
 
     public void setNume(String nume) {
@@ -41,8 +66,15 @@ public class Local {
         this.tipLocal = tipLocal;
     }
 
-    public void afisareLocal()
-    {
-        System.out.println("Local :"+this.nume);
+    public void setMaxComenzi() {
+        this.maxComenzi--;
     }
+
+    @Override
+    public int compareTo(Local o) {
+
+        return this.maxComenzi-o.getMaxComenzi();
+
+    }
+
 }
