@@ -1,8 +1,11 @@
 package com.company;
 
+import java.util.ArrayList;
+
 public class MeniuService {
 
-    public void addMancare(Meniu meniu, Mancare mancare) {
+    public void addMancare(Mancare mancare) {
 
     }
+
 }

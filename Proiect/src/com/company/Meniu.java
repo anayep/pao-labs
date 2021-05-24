@@ -1,19 +1,22 @@
 package com.company;
 
+import java.util.ArrayList;
+
 public class Meniu {
     private static int id;
-    private Mancare[] FeluriMancare;
+    private ArrayList<Mancare> FeluriMancare;
 
-    public Meniu(Mancare[] feluriMancare) {
+    public Meniu(ArrayList<Mancare> feluriMancare) {
         FeluriMancare = feluriMancare;
         id = id + 1;
     }
 
-    public Mancare[] getFeluriMancare() {
+
+    public ArrayList<Mancare> getFeluriMancare() {
         return FeluriMancare;
     }
 
-    public void setFeluriMancare(Mancare[] feluriMancare) {
+    public void setFeluriMancare(ArrayList<Mancare> feluriMancare) {
         FeluriMancare = feluriMancare;
     }
 

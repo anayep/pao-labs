@@ -38,7 +38,7 @@ public class Mancare {
 
     public void afisareMancare()
     {
-        System.out.println("Mancare :"+this.nume+" "+this.pret +" "+this.picanta);
+        System.out.println("Mancare: "+this.nume+"    Pret: "+this.pret +"lei    Picant: "+this.picanta + "\n");
     }
 
 

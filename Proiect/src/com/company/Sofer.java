@@ -15,6 +15,11 @@ public class Sofer extends Persoana {
         dataAngajare=null;
     }
 
+    public Sofer(String nume, String email, String nrtel, int salariu) {
+        super(nume,email,nrtel);
+        this.salariu = salariu;
+    }
+
 
     public int getSalariu() {
         return salariu;
@@ -62,6 +67,7 @@ public class Sofer extends Persoana {
     }
     public void afisareSofer()
     {
+        System.out.println("Nume : " +this.nume);
         System.out.println("Salariu : " +this.salariu +"lei");
         System.out.println("Data angajare: "+this.dataAngajare);
     }

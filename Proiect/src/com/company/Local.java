@@ -8,7 +8,7 @@ public class Local implements Comparable<Local>{
     private String nume;
     private String adresa;
     private String tipLocal;
-    private ArrayList<Mancare> meniu;
+    private Meniu meniu;
     private int maxComenzi;
 
     public Local() {
@@ -20,11 +20,19 @@ public class Local implements Comparable<Local>{
         maxComenzi = 20;
     }
 
-    public Local(String nume, String adresa, String tipLocal, ArrayList<Mancare> meniu) {
+    public Local(String nume, String adresa, String tipLocal, Meniu meniu) {
         this.nume = nume;
         this.adresa = adresa;
         this.tipLocal = tipLocal;
         this.meniu = meniu;
+        this.maxComenzi = 20;
+    }
+
+    public Local(String nume, String adresa, String tipLocal) {
+        this.nume = nume;
+        this.adresa = adresa;
+        this.tipLocal = tipLocal;
+        this.meniu = null;
         this.maxComenzi = 20;
     }
 
@@ -42,7 +50,7 @@ public class Local implements Comparable<Local>{
         return tipLocal;
     }
 
-    public ArrayList<Mancare> getMeniu() {
+    public Meniu getMeniu() {
         return meniu;
     }
 
@@ -50,7 +58,7 @@ public class Local implements Comparable<Local>{
         return maxComenzi;
     }
 
-    public void setMeniu(ArrayList<Mancare> meniu) {
+    public void setMeniu(Meniu meniu) {
         this.meniu = meniu;
     }
 
